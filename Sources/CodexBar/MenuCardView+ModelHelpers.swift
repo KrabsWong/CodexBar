@@ -177,7 +177,7 @@ extension UsageMenuCardView.Model {
         return extraRateWindows.map { namedWindow in
             Metric(
                 id: namedWindow.id,
-                title: namedWindow.title,
+                title: Self.extraRateWindowTitle(namedWindow, provider: input.provider),
                 percent: Self.clamped(
                     input.usageBarsShowUsed
                         ? namedWindow.window.usedPercent
@@ -192,6 +192,18 @@ extension UsageMenuCardView.Model {
                 detailRightText: nil,
                 pacePercent: nil,
                 paceOnTop: true)
+        }
+    }
+
+    private static func extraRateWindowTitle(_ namedWindow: NamedRateWindow, provider: UsageProvider) -> String {
+        guard provider == .codex else { return namedWindow.title }
+        switch namedWindow.id {
+        case "codex-spark":
+            return L("Codex Spark 5-hour")
+        case "codex-spark-weekly":
+            return L("Codex Spark Weekly")
+        default:
+            return namedWindow.title
         }
     }
 

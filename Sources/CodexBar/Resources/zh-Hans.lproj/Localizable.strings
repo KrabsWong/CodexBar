@@ -1030,3 +1030,12 @@
 "Cookie: …\n\nor paste the __Secure-next-auth.session-token value" = "Cookie: …\n\n或粘贴 __Secure-next-auth.session-token 值";
 "Cookie: …\n\nor paste the kimi-auth token value" = "Cookie: …\n\n或粘贴 kimi-auth token 值";
 "session_id=...\n\nor paste just the session_id value" = "session_id=...\n\n或只粘贴 session_id 值";
+"Codex CLI is not signed in. Run `codex login --device-auth`, then refresh." = "Codex CLI 尚未登录。请运行 `codex login --device-auth`，然后刷新。";
+"Codex session expired. Sign in again." = "Codex 会话已过期。请重新登录。";
+"Codex Spark 5-hour" = "Codex Spark 5 小时";
+"Codex Spark Weekly" = "Codex Spark 每周";
+"Codex usage is temporarily unavailable. Try refreshing." = "Codex 用量暂时不可用。请尝试刷新。";
+"OpenAI web refresh hit a network error. Check your connection, then refresh OpenAI cookies and try again." = "OpenAI 网页刷新遇到网络错误。请检查连接，然后刷新 OpenAI Cookie 后重试。";
+"OpenAI web refresh timed out. Refresh OpenAI cookies and try again." = "OpenAI 网页刷新超时。请刷新 OpenAI Cookie 后重试。";
+"OpenAI web refresh was interrupted. Refresh OpenAI cookies and try again." = "OpenAI 网页刷新被中断。请刷新 OpenAI Cookie 后重试。";
+"System Account" = "系统账户";

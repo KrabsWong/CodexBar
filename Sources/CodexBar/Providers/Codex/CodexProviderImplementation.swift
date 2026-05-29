@@ -219,7 +219,7 @@ struct CodexProviderImplementation: ProviderImplementation {
     func loginMenuAction(context _: ProviderMenuLoginContext)
         -> (label: String, action: MenuDescriptor.MenuAction)?
     {
-        ("Add Account...", .addCodexAccount)
+        (L("Add Account..."), .addCodexAccount)
     }
 
     @MainActor
@@ -246,7 +246,7 @@ struct CodexProviderImplementation: ProviderImplementation {
         }
 
         entries.append(.submenu(
-            "System Account",
+            L("System Account"),
             MenuDescriptor.MenuActionSystemImage.systemAccount.rawValue,
             submenuItems))
     }

@@ -24,28 +24,29 @@ struct CodexUIErrorMapper {
         }
 
         if self.looksCodexCLILoginRequired(lower: lower) {
-            return self.codexCLINotSignedInMessage
+            return L(self.codexCLINotSignedInMessage)
         }
 
         if self.looksExpired(lower: lower) {
-            return "Codex session expired. Sign in again."
+            return L("Codex session expired. Sign in again.")
         }
 
         if lower.contains("frame load interrupted") {
-            return "OpenAI web refresh was interrupted. Refresh OpenAI cookies and try again."
+            return L("OpenAI web refresh was interrupted. Refresh OpenAI cookies and try again.")
         }
 
         if self.looksOpenAIWebTimeout(lower: lower) {
-            return "OpenAI web refresh timed out. Refresh OpenAI cookies and try again."
+            return L("OpenAI web refresh timed out. Refresh OpenAI cookies and try again.")
         }
 
         if self.looksOpenAIWebNetworkError(lower: lower) {
-            return "OpenAI web refresh hit a network error. "
-                + "Check your connection, then refresh OpenAI cookies and try again."
+            return L(
+                "OpenAI web refresh hit a network error. "
+                    + "Check your connection, then refresh OpenAI cookies and try again.")
         }
 
         if self.looksInternalTransport(lower: lower) {
-            return "Codex usage is temporarily unavailable. Try refreshing."
+            return L("Codex usage is temporarily unavailable. Try refreshing.")
         }
 
         return trimmed
@@ -56,6 +57,7 @@ struct CodexUIErrorMapper {
         guard let suffixRange = raw.range(of: cachedMarker) else { return nil }
 
         let suffix = String(raw[suffixRange.lowerBound...]).trimmingCharacters(in: .whitespacesAndNewlines)
+
         if lower.hasPrefix("last codex credits refresh failed:"),
            let base = self.userFacingMessage(String(raw[..<suffixRange.lowerBound]))
         {
